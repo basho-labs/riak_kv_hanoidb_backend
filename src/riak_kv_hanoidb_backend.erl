@@ -51,7 +51,7 @@
          to_key_range/1]).
 -endif.
 
--include("include/hanoidb.hrl").
+-include_lib("hanoidb/include/hanoidb.hrl").
 
 -define(API_VERSION, 1).
 %% TODO: for when this backend supports 2i

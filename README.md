@@ -61,6 +61,6 @@ resulting dev nodes to use the hanoidb storage backend.
 1. `git clone git://github.com/basho/riak.git`
 1. `mkdir riak/deps`
 1. `cd riak/deps`
-1. `git clone git://github.com/basho/riak_kv_hanoidb_backend.git`
+1. `git clone git://github.com/basho-labs/riak_kv_hanoidb_backend.git`
 1. `cd ..`
 1. `./deps/riak_kv_hanoidb_backend/enable-hanoidb`

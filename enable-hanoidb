@@ -38,15 +38,15 @@ file=./deps/riak_kv/src/riak_kv.app.src
 if ! grep -q hanoidb $file ; then
     echo
     echo "Modifying $file, saving the original as ${file}.orig ..."
-    perl -i.orig -pe '/\bos_mon,/ && print qq(                  hanoidb,\n)' $file
+    perl -i.orig -pe '/\bos_mon,/ && print qq(                  riak_kv_hanoidb_backend,\n)' $file
 fi
 
 file=./deps/riak_kv/rebar.config
 if ! grep -q hanoidb $file ; then
     echo
     echo "Modifying $file, saving the original as ${file}.orig ..."
-    perl -i.orig -pe '/\bsext\b/ && print qq(        {hanoidb, "1.*", {git, "git\@github.com:basho/hanoidb.git", "master"}},\n)' $file
-    perl -i.orig -pe '/\bsext\b/ && print qq(        {hanoidb, ".*", {git, "git\@github.com:basho-labs/riak_kv_hanoidb_backend.git", "master"}},\n)' $file
+    perl -i.orig -pe '/\bsext\b/ && print qq(        {hanoidb, "1.*", {git, "git\@github.com:basho-labs/hanoidb.git", "master"}},\n)' $file
+    perl -i.orig -pe '/\bsext\b/ && print qq(        {riak_kv_hanoidb_backend, ".*", {git, "git\@github.com:basho-labs/riak_kv_hanoidb_backend.git", "master"}},\n)' $file
 fi
 
 ./rebar get-deps
