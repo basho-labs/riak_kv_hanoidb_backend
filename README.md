@@ -11,12 +11,11 @@ Put these values in your `app.config` in the `hanoidb` section
           {data_root, "./data/hanoidb"},
 
           %% Enable/disable on-disk compression.
-          %%
-          {compress, none | gzip | snappy | lz4},
+          %% {compress, none | gzip | snappy | lz4},
+          {compress, none},
 
           %% Expire (automatically delete) entries after N seconds.
           %% When this value is 0 (zero), entries never expire.
-          %%
           {expiry_secs, 0},
 
           %% Sync strategy `none' only syncs every time the
@@ -25,28 +24,26 @@ Put these values in your `app.config` in the `hanoidb` section
           %%
           %% Sync strategy `sync' will sync the nursery log
           %% for every insert or delete operation.
-          %%
-          {sync_strategy, none | sync | {seconds, N}},
+          %% {sync_strategy, none | sync | {seconds, N}},
+          {sync_strategy, none},
 
           %% The page size is a minimum page size, when a page fills
           %% up to beyond this size, it is written to disk.
           %% Compression applies to such units of page size.
-          %%
           {page_size, 8192},
 
           %% Read/write buffer sizes apply to merge processes.
           %% A merge process has two read buffers and a write
           %% buffer, and there is a merge process *per level* in
           %% the database.
-          %%
           {write_buffer_size, 524288},  % 512kB
           {read_buffer_size, 524288},  % 512kB
 
           %% The merge strategy is one of `fast' or `predictable'.
           %% Both have same log2(N) worst case, but `fast' is
           %% sometimes faster; yielding latency fluctuations.
-          %%
-          {merge_strategy, fast | predictable}
+          %% {merge_strategy, fast | predictable}
+          {merge_strategy, fast}
          ]},
 ```
 
