@@ -20,7 +20,7 @@ Put these values in your `app.config` in the `hanoidb` section
 
           %% Sync strategy `none' only syncs every time the
           %% nursery runs full, which is currently hard coded
-          %% to be evert 256 inserts or deletes.
+          %% to be every 256 inserts or deletes.
           %%
           %% Sync strategy `sync' will sync the nursery log
           %% for every insert or delete operation.
